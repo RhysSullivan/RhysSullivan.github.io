@@ -26,61 +26,97 @@
 <!-- My Bio -->
 
 <section class="w3-container w3-center w3-content">
-    <h1 class="w3-container w3-center w3-content">Rhys Sullivan</h1>
-    <img src="Home/me.jpg" alt="Random Name" height="600" width="600">
-    <p>My name is Rhys Sullivan, I've been making games using Unreal Engine 4 for the past year programming in blueprints and C++. I'm a senior in high school and I'm hoping to study Game Development and Programming in college. </p>
+    <p>My name is Rhys Sullivan, I've been making games using Unreal Engine 4 for the past year programming in blueprints and C++. I'm currently majoring in game programming at Champlain College</p>
 </section>
 
 
 <!-- Games -->
-<section class="w3-row-padding w3-center w3-light-grey">
- 
-<article class="w3-third">
-    <h3>Recalled</h3>
-    <a href="https://julienst-jean.itch.io/recalled"><img src="Home/recalled.png" alt="Random Name" style="width:100%"></a>
-    <p>Made by a team of 4 in 5 days for the Spring UE4 Jam 2018. Our team ended up placing in one of the 3 finalist spots.</p>
-  </article>
-  
-  <article class="w3-third">
-    <h3>Stranded On Mars</h3>
-    <a href="https://perlion.itch.io/strandedonmars"><img src="Home/STOM.png" alt="Random Name" style="width:100%"></a>
-    <p>Made by a team of 4 for the Summer UE4 Jam 2018.</p>
-  </article>
- 
- <article class="w3-third">
-    <h3>Scrappy</h3>
-    <a href="https://perlion.itch.io/scrappy"><img src="Home/Scrappy.png" alt="Random Name" style="width:100%"></a>
-    <p>Made for ludemdare 42 in 48 hours. All of the art and programming done by me.</p>
-  </article>
-  
-   <article class="w3-third">
-    <h3>Elemental Slime</h3>
-    <a href="https://perlion.itch.io/elemental-slime"><img src="Home/ElementalS.png" alt="Random Name" style="width:100%"></a>
-    <p>My first game made for the Slime Jam in 5 days.</p>
-  </article>
-  
-    <article class="w3-third">
-    <h3>DBUG</h3>
-    <a href="https://rhyssullivan.itch.io/dbug"><img src="Home/DBUG.png" alt="Random Name" style="width:100%"></a>
-    <p>Made by a team of 5 for the Unreal Engine 4 Mega Jam 2018. You play as a college student trying to figure out what has happened to your world after your door blue screens when you try to open it.</p>
-  </article>
-  
-  <article class="w3-third">
-    <h3>Growing Home</h3>
-    <a href="https://globalgamejam.org/2019/games/growing-home"><img src="Home/GrowingHome.png" alt="Random Name" style="width:100%"></a>
-    <p>Made by a team of 4 for the Global Game Jam 2019 in 48 hours. You play as a Hermit Crab while you avoid enemies and collect food as you grow in size and out of your old homes.</p>
-  </article>
-  
-  <article class="w3-third">
-    <h3>Agent Cupid</h3>
-    <a href="https://rhyssullivan.itch.io/agent-cupid"><img src="Home/AgentC.png" alt="Random Name" style="width:100%"></a>
-    <p>Made by a team of 3 for the UE4 Winter Jam 2019. Designed for the Oculus Rift you play as Cupid attempting to sneak into a cold war bunker as you take out robotic enemies.</p>
-  </article>
-</section>
-  
-  
-  
-</section>
+<style>
+.title { font-size:1.5em; font-weight:bold; padding-right:12px; }
+.parts{ display:flex; flex-wrap: wrap;justify-content: center;}
+.part { width:540px; padding-right:64px; padding-bottom:64px;}
+@media only screen and (max-width: 1280px)
+{
+  .parts { flex-direction:column;}
+  .part { width:98%; padding-right:0px; }
+}
+</style> 
+<div id="content">
+
+	<div class="parts">
+
+		  <div class="part">
+			 <span class="title">Recalled</span> UE4 Spring Jam 2018<br>
+			 <br>
+			 <a href="https://julienst-jean.itch.io/recalled"><img src="Home/recalled.png" style="width:100%"></a>
+			 <br>
+			 Made by a team of 4 in 5 days for the Spring UE4 Jam 2018. Our team ended up placing in one of the 3 finalist spots.<br>
+		  </div>
+
+		  <div class="part">
+				 <span class="title">Stranded On Mars</span> UE4 Summer Jam 2018<br>
+				 <br>
+				 <a href="https://perlion.itch.io/strandedonmars"><img src="Home/STOM.png" style="width:100%"></a>
+				 <br>
+				 Made by a team of 4 for the Summer UE4 Jam 2018.<br>
+			  </div>
+
+		  <div class="part">
+				 <span class="title">Scrappy</span> Ludum Dare 42, 2018<br>
+				 <br>
+				 <a href="https://perlion.itch.io/scrappy"><img src="Home/Scrappy.png" alt="Random Name" style="width:100%"></a>
+				 <br>
+				 Made for Ludum Dare 42 in 48 hours. All of the art and programming done by me.<br>
+			  </div>
+			  
+			   <div class="part">
+			 <span class="title">Elemental Slime</span> Slime Jam 2018<br>
+			 <br>
+			 <a href="https://perlion.itch.io/elemental-slime"><img src="Home/ElementalS.png" alt="Random Name" style="width:100%"></a>
+			 <br>
+			 My first game made for the Slime Jam in 5 days<br>
+		  </div>
+
+		  <div class="part">
+				 <span class="title">DBUG</span> UE4 Mega Jam 2018<br>
+				 <br>
+				 <a href="https://rhyssullivan.itch.io/dbug"><img src="Home/DBUG.png" alt="Random Name" style="width:100%"></a>
+				 <br>
+				Made by a team of 5 for the Unreal Engine 4 Mega Jam 2018. You play as a college student trying to figure out what has happened to your world after your door blue screens when you try to open it.<br>
+			  </div>
+			  
+		 <div class="part">
+			 <span class="title">Agent Cupid</span> UE4 Winter Jam 2019<br>
+			 <br>
+			 <a href="https://rhyssullivan.itch.io/agent-cupid"><img src="Home/AgentC.png" alt="Random Name" style="width:100%"></a>
+			 <br>
+			 Made by a team of 3 for the UE4 Winter Jam 2019. Designed for the Oculus Rift you play as Cupid attempting to sneak into a cold war bunker as you take out robotic enemies.<br>
+		  </div>
+
+		  <div class="part">
+				 <span class="title">Growing Home</span> Global Game Jam 2019<br>
+				 <br>
+				 <a href="https://globalgamejam.org/2019/games/growing-home"><img src="Home/GrowingHome.png" alt="Random Name" style="width:100%"></a>
+				 <br>
+				 Made by a team of 4 for the Global Game Jam 2019 in 48 hours. You play as a Hermit Crab while you avoid enemies and collect food as you grow in size and out of your old homes.<br>
+			  </div>
+
+		  <div class="part">
+				 <span class="title">Into the Arcade</span> UE4 Spring Jam 2019<br>
+				 <br>
+				 <a href="https://rhyssullivan.itch.io/into-the-arcade"><img src="Home/ITAGrapple.jpg" alt="Random Name" style="width:100%"></a>
+				 <br>
+				 Made by a team of 4 in 5 days for the Summer UE4 Jam 2019. I handled programming and level design.<br>
+			  </div>
+		  <div class="part">
+			 <span class="title">Last Day In The Park</span> UE4 Summer Jam 2019<br>
+			 <br>
+			 <a href="https://rhyssullivan.itch.io/last-day-in-the-park"><img src="Home/LDITP.png" alt="Random Name" style="width:100%"></a>
+			 <br>
+			 Solo project, all of the art and programming was done by me. 3D Modeling was done in Blender, project made in Unreal Engine. Made for Oculus VR.<br>
+			 </div>
+	</div>
+</div>
 
 
 <!-- Footer -->
