@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 <title>Rhys Sullivan - Unreal Engine 4 game developer</title>
@@ -12,136 +12,190 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
 <body>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 
-<!-- Navigation -->
-<nav class="w3-bar w3-black">
-  <a href="index.html" class="w3-button w3-bar-item">Home</a>
-  <a href="BugsandSolutions.html" class="w3-button w3-bar-item">Bugs & Solutions</a>
- <!-- <a href="#tour" class="w3-button w3-bar-item">Achievements</a> -->
-  <!-- <a href="#contact" class="w3-button w3-bar-item">Contact</a> -->
-</nav>
+	<!-- Navigation -->
+	<nav class="w3-bar w3-black">
+		<a href="index.html" class="w3-button w3-bar-item">Home</a>
+		<!--<a href="BugsandSolutions.html" class="w3-button w3-bar-item">Bugs & Solutions</a>-->
+		<a href="allprojects.html" class="w3-button w3-bar-item">All Projects</a>
+		<!-- <a href="#tour" class="w3-button w3-bar-item">Achievements</a> -->
+		<!-- <a href="#contact" class="w3-button w3-bar-item">Contact</a> -->
+	</nav>
 
-<!-- My Bio -->
+	<!-- My Bio -->
 
-<section class="w3-container w3-center w3-content">
-    <p>My name is Rhys Sullivan, I've been making games using Unreal Engine 4 for the past 2 years programming in blueprints and C++. I'm currently majoring in game programming at Champlain College</p>
-</section>
+	<section class="w3-container w3-center w3-content">
+		<p>I'm Rhys Sullivan, I make games in Unreal Engine using a mix of C++ and Blueprints. I have a knowledge of networking, VR, performance, and C++.</p>
+	</section>
 
 
-<!-- Games -->
-<style>
-.title { font-size:1.5em; font-weight:bold; padding-right:12px; }
-.parts{ display:flex; flex-wrap: wrap;justify-content: center;}
-.part { width:540px; padding-right:64px; padding-bottom:64px;}
-@media only screen and (max-width: 1280px)
-{
-  .parts { flex-direction:column;}
-  .part { width:98%; padding-right:0px; }
-}
-</style> 
-<div id="content">
+	<!-- Games -->
+	<style>
+		.title {
+			font-size: 1.5em;
+			font-weight: bold;
+			padding-right: 12px;
+		}
 
-	<div class="parts">
-		
-		<div class="part">
-			 <span class="title">Ground Control</span>UE4 Mega Jam 2019<br>
-			 <br>
-			 <a href="https://rhyssullivan.itch.io/ground-control"><img src="Home/GroundControl.png" alt="Random Name" style="width:100%"></a>
-			 <br>
-			 Made by a team of 5 over 7 days for the UE4 Mega Jam 2019. For this project I handled all of the networking code which included steam matchmaking as a server browser and two networked characters, one that was a third person character who ran around interacting on a ship and the other who was first person in a control room.
-			 </div>	
+		.parts {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
 
-		<div class="part">
-			 <span class="title">Untitled VR Kart Racer</span>Jan 2019-June 2019<br>
-			 <br>
-			 <iframe width="450" height="212" src="https://www.youtube.com/embed/LZSft4THWVQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			 <br>
-			 Solo project made to learn C++, VR, and networking. This project included a network replicated kart movement system, pooled item spawning system, and grabbable items. 
-			 </div>	
+		.part {
+			width: 540px;
+			padding-right: 64px;
+			padding-bottom: 64px;
+		}
 
-		  <div class="part">
-			 <span class="title">Last Day In The Park</span> UE4 Summer Jam 2019<br>
-			 <br>
-			 <a href="https://rhyssullivan.itch.io/last-day-in-the-park"><img src="Home/LDITP.png" alt="Random Name" style="width:100%"></a>
-			 <br>
-			 Solo project, all of the art and programming was done by me. 3D Modeling was done in Blender, project made in Unreal Engine. Made for Oculus VR.<br>
-			 </div>	
-			 
-		  <div class="part">
-			 <span class="title">Recalled</span> UE4 Spring Jam 2018<br>
-			 <br>
-			 <a href="https://julienst-jean.itch.io/recalled"><img src="Home/recalled.png" style="width:100%"></a>
-			 <br>
-			 Made by a team of 4 in 5 days for the Spring UE4 Jam 2018. Our team ended up placing in one of the 3 finalist spots.<br>
-		  </div>
+		@media only screen and (max-width: 1280px) {
+			.parts {
+				flex-direction: column;
+			}
 
-		  <div class="part">
-				 <span class="title">Stranded On Mars</span> UE4 Summer Jam 2018<br>
-				 <br>
-				 <a href="https://perlion.itch.io/strandedonmars"><img src="Home/STOM.png" style="width:100%"></a>
-				 <br>
-				 Made by a team of 4 for the Summer UE4 Jam 2018.<br>
-			  </div>
+			.part {
+				width: 98%;
+				padding-right: 0px;
+			}
+		}
+	</style>
+	<div id="content">
 
-		 <div class="part">
-			   <span class="title">Into the Arcade</span> UE4 Spring Jam 2019<br>
-			   <br>
-			   <a href="https://rhyssullivan.itch.io/into-the-arcade"><img src="Home/ITAGrapple.jpg" alt="Random Name" style="width:100%"></a>
-			   <br>
-			   Made by a team of 4 in 5 days for the Summer UE4 Jam 2019. I handled programming and level design.<br>
-			  </div>
-		  <div class="part">
-				 <span class="title">Scrappy</span> Ludum Dare 42, 2018<br>
-				 <br>
-				 <a href="https://perlion.itch.io/scrappy"><img src="Home/Scrappy.png" alt="Random Name" style="width:100%"></a>
-				 <br>
-				 Made for Ludum Dare 42 in 48 hours. All of the art and programming done by me.<br>
-			  </div>
-			  
-		 <div class="part">
-			 <span class="title">Elemental Slime</span> Slime Jam 2018<br>
-			 <br>
-			 <a href="https://perlion.itch.io/elemental-slime"><img src="Home/ElementalS.png" alt="Random Name" style="width:100%"></a>
-			 <br>
-			 My first game made for the Slime Jam in 5 days<br>
-		  </div>
+		<div class="parts">
 
-		  <div class="part">
-				 <span class="title">DBUG</span> UE4 Mega Jam 2018<br>
-				 <br>
-				 <a href="https://rhyssullivan.itch.io/dbug"><img src="Home/DBUG.png" alt="Random Name" style="width:100%"></a>
-				 <br>
-				Made by a team of 5 for the Unreal Engine 4 Mega Jam 2018. You play as a college student trying to figure out what has happened to your world after your door blue screens when you try to open it.<br>
-			  </div>
-			  
-		 <div class="part">
-			 <span class="title">Agent Cupid</span> UE4 Winter Jam 2019<br>
-			 <br>
-			 <a href="https://rhyssullivan.itch.io/agent-cupid"><img src="Home/AgentC.png" alt="Random Name" style="width:100%"></a>
-			 <br>
-			 Made by a team of 3 for the UE4 Winter Jam 2019. Designed for the Oculus Rift you play as Cupid attempting to sneak into a cold war bunker as you take out robotic enemies.<br>
-		  </div>
+			<div class="part">
+				<span class="title">Ground Control</span>UE4 Mega Jam 2019<br>
+				<br>
+				<a href="https://rhyssullivan.itch.io/ground-control"><img src="Home/GroundControl.png" alt="Random Name" style="width:100%"></a>
+				<br>
+				What is it: 2 player game made for the theme "Down To Earth". One player is in a Spaceship trying to return to earth and survive reentry as their ship falls apart. The other player is in ground control telling the player in the Spaceship where their issues are and how to fix them.
+				<br>
+				<br>
+				Team Size: 5
+				<br>
+				<br>
+				Duration: 7 days
+				<br>
+				<br>
+				What I did: Networking code which included Steam matchmaking and a server browser. Programmed Two networked characters, one that was a third person character who ran around interacting on a ship and the other who was first person in a control room. Project was done using Blueprints.
+			</div>
 
-		  <div class="part">
-				 <span class="title">Growing Home</span> Global Game Jam 2019<br>
-				 <br>
-				 <a href="https://globalgamejam.org/2019/games/growing-home"><img src="Home/GrowingHome.png" alt="Random Name" style="width:100%"></a>
-				 <br>
-				 Made by a team of 4 for the Global Game Jam 2019 in 48 hours. You play as a Hermit Crab while you avoid enemies and collect food as you grow in size and out of your old homes.<br>
-			  </div>
+			<div class="part">
+				<span class="title">Untitled VR Kart Racer</span>Jan 2019-June 2019<br>
+				<br>
+				<iframe width="450" height="212" src="https://www.youtube.com/embed/LZSft4THWVQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<br>
+				What is it: Virtual Reality Kart Racer that I made to learn VR, C++, and Networking.
+				<br>
+				<br>
+				Team Size: 1
+				<br>
+				<br>
+				Duration: 6 Months
+				<br>
+				<br>
+				What I did: Network replicated kart movement system, pooled item spawning system, and grabbable items all implemented in C++ - some Blueprints were used to extend the C++ base classes.
+			</div>
+
+			<div class="part">
+				<span class="title">Last Day In The Park</span> UE4 Summer Jam 2019<br>
+				<br>
+				<iframe width="450" height="212" src="https://www.youtube.com/embed/1xgsrFzFU5k?start=15" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<br>
+				What is it: Virtual Reality game where you play with your dog in the park.
+				<br>
+				<br>
+				Team Size: 1
+				<br>
+				<br>
+				Duration: 5 Days
+				<br>
+				<br>
+				What I did: Programmed AI for playing frisbee and fetch. Made a bike racing mini game and treat giving mini game. Project was done using pure blueprints. All modeling was done by me.
+			</div>
+
+			<div class="part">
+				<span class="title">Stranded On Mars</span> UE4 Summer Jam 2018<br>
+				<br>
+				<iframe width="450" height="212" src="https://www.youtube.com/embed/K6QMpFei6T8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<br>
+				What is it: Wave style 3D tower defense game made for the game jam theme "Well that escalated quickly". Player has a budget of buildings that can be placed down and has to place different turrets to defend their base.
+				<br>
+				<br>
+				Team Size: 5
+				<br>
+				<br>
+				Duration: 5 Days
+				<br>
+				<br>
+				What I did: Programmed taser turret that can jump from enemy to enemy, emote wheel widget and implementation, wave AI that would attack the closet turret or the base. Project was done using Blueprints.
+			</div>
+
+			<div class="part">
+				<span class="title">VR Spin Bike Project</span> Personal Programming Project April 2020<br>
+				<br>
+				<blockquote class="twitter-tweet"><p lang="en" dir="ltr">I made a small app for my <a href="https://twitter.com/oculus?ref_src=twsrc%5Etfw">@oculus</a> quest in <a href="https://twitter.com/UnrealEngine?ref_src=twsrc%5Etfw">@UnrealEngine</a> which lets me use my spin bike to race in VR! <a href="https://twitter.com/hashtag/ue4?src=hash&amp;ref_src=twsrc%5Etfw">#ue4</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://twitter.com/hashtag/OculusQuest?src=hash&amp;ref_src=twsrc%5Etfw">#OculusQuest</a> <a href="https://t.co/xR8AOStZ6v">pic.twitter.com/xR8AOStZ6v</a></p>&mdash; Rhys Sullivan (@RhysSullivan) <a href="https://twitter.com/RhysSullivan/status/1247677617886486528?ref_src=twsrc%5Etfw">April 8, 2020</a></blockquote>
+				<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+				<br>
+				What is it: VR project running on the Oculus Quest that converts spin bike pedaling into in-game input.
+				<br>
+				<br>
+				Team Size: 1
+				<br>
+				<br>
+				Duration: 2 Weeks
+				<br>
+				<br>
+				What I did: Programmed basic vehicle path finding code that would allow AI to stay on the course and react to other bikes coming near them. I also figured out how to convert input from an aux cord on the spin bike into in game movement through taking the average over a time of the intensity of the mic value. Project used a mix of C++ and blueprints.
+			</div>
+
+
+			<div class="part">
+				<span class="title">Recalled</span> UE4 Spring Jam 2018<br>
+				<br>
+				<iframe width="450" height="212" src="https://www.youtube.com/embed/hg0zWPjyGgM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<br>
+				What is it: Single player platformer made for the theme of "Transformation". The game is set inside of a factory that is trying to destroy the player and the player has to gain upgrades to escape.
+				<br>
+				<br>
+				Team Size: 5
+				<br>
+				<br>
+				Duration: 5 Days
+				<br>
+				<br>
+				What I did: Programmed the final boss AI, moving platforms, and player death. Project used blueprints.
+			</div>
+
+			<div class="part">
+				<span class="title">Cobble</span> Global Game Jam 2020<br>
+				<br>
+				<iframe width="450" height="212" src="https://www.youtube.com/embed/vusB_9LhE_Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<br>
+				What is it: Single player platformer made for the theme of "Repair". The game is set inside of a clocktower and you have to use gears to power different contraptions to escape the tower.
+				<br>
+				<br>
+				Team Size: 7
+				<br>
+				<br>
+				Duration: 5 Days
+				<br>
+				<br>
+				What I did: Programmed spline based moving platforms, tileset generator for the 2.5D style, gear mechanics to allow contraptions to be powered and unpowered. Project was a mix of C++ and Blueprints.
+			</div>
+		</div>
 	</div>
-</div>
 
-
-<!-- Footer -->
-<footer class="w3-container w3-padding-64 w3-center w3-black w3-xlarge">
-  <a href="https://twitter.com/RhysSullivan"><i class="fa fa-twitter"></i></a>
-  <a href="https://www.youtube.com/channel/UCD2OU4a61o86Cszy7IjAFOw?view_as=subscriber"><i class="fa fa-youtube"></i></a>
-  <a href="https://github.com/Perlion"><i class="fa fa-github"></i></a>
+	<!-- Footer -->
+	<footer class="w3-container w3-padding-64 w3-center w3-black w3-xlarge">
+		<a href="https://twitter.com/RhysSullivan"><i class="fa fa-twitter"></i></a>
+		<a href="https://www.youtube.com/channel/UCD2OU4a61o86Cszy7IjAFOw?view_as=subscriber"><i class="fa fa-youtube"></i></a>
+		<a href="https://github.com/Perlion"><i class="fa fa-github"></i></a>
 
 
 
-</footer>
+	</footer>
 </body>
 </html>
