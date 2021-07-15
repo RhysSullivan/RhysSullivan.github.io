@@ -1,0 +1,78 @@
+html, body {
+  overflow-x: hidden;
+}
+body {
+  position: relative;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.twitch-embed-mobile{
+  margin: auto;
+  width: 50%;
+  margin-top: 5%;
+}
+.colour{
+  height: 5%;
+  width: auto;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.old_matrices{
+  margin-top: 5%;
+}
+
+#mt3{
+  margin-top: 3%;
+}
+
+#centreTwitch{
+  margin-left: 25%;
+}
+
+#rightalign {
+  text-align: right;
+  font-size: 2em;
+  margin-right: 10.3%;
+  margin-top: 1%;
+}
+#rightalign a {
+  color: black;
+}
+#selected{
+  background-color: white;
+  height: auto;
+}
+#red{
+  background-color: red;
+}
+#green{
+  background-color: green;
+}
+#blue{
+  background-color: blue;
+}
+#black{
+  background-color: black;
+}
+#white{
+  background-color: white;
+}
+#neon-blue{
+  background-color: #00f3ff;
+}
+#yellow{
+  background-color: yellow;
+}
+#pink{
+  background-color: #FF1493;
+}

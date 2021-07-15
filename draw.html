@@ -1,0 +1,83 @@
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel='stylesheet' href='https://bgrins.github.io/spectrum/spectrum.css' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src='https://bgrins.github.io/spectrum/spectrum.js'></script>
+    
+    <link rel="stylesheet" href="./static/stylesheet.f9ffd9fea8dd.css">
+    <link rel="shortcut icon" type="image/png" href="./static/favicon.b4e2a4f32be6.ico" />
+  </head>
+  
+  <body>
+    <div class="container" style="align-content: center;">
+      <div class="row">
+        <div class="col">
+          <h1>Draw Something</h1>
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col">
+          <video id="myVid" autoplay playsinline></video>
+          <canvas id="myCanvas" width="640" height="640" style="border:1px solid #000000;">
+          </canvas>
+          <div class="row">
+            <div class="col colour noselect" id="black"> &nbsp;</div>
+            <div class="col colour noselect" id="white">&nbsp;</div>
+            <div class="col colour noselect" id="yellow">&nbsp;</div>
+            <div class="col colour noselect" id="green">&nbsp;</div>
+            <div class="col colour noselect" id="red">&nbsp;</div>
+            <div class="col colour noselect" id="blue">&nbsp;</div>
+            <div class="col colour noselect" id="pink">&nbsp;</div>
+            <div class="col colour noselect" id="neon-blue">&nbsp;</div>
+          </div>
+  
+          <div class="row" id="mt3">
+            <div class="col colour" id=selected> &nbsp;</div>
+            <!-- <input type='text' id="custom" /></div> -->
+            <button id="resetbutton" class="col" onclick="resetBoard()" type="submit" name='mybtn2'>Reset</button>
+          </div>
+  
+          <div class="row">
+            <div class="col"> </div>
+            <div class="col" id="txt"></div>
+          </div>
+        </div>
+  
+        <div class="col d-none d-lg-block">
+          <!-- Add a placeholder for the Twitch embed -->
+          <div id="twitch-embed"></div>
+        </div>
+      </div>
+  
+      </div>
+      <script type="text/javascript">
+        window.CSRF_TOKEN = "wfe3TVKT1IWYTkX6x37XukfaDhgNcG6y56TZvd4Vw0LaD7ETEck1pMqxnPui7HOX";
+      </script>
+
+      <script>        
+        const img = document.getElementById('myVid');
+        
+        
+        
+      </script>
+
+      <script>
+        var t = "07/13/2021, 22:02:12";
+        var delta = "1014.667395"
+        var ip = "http://143.198.169.71:5000"
+        var URL_json = ip + "/getJSON/";
+        var URL_refresh = ip + "/refresh/";
+        var URL_reset = ip + "/reset/";
+      </script>
+      <script type="text/javascript" src="./static/main.js">
+      </script>
+
+     <script type="text/javascript" src="./static/showOld.js">
+    </script>
+
+    </div>
+  </body>
+  
