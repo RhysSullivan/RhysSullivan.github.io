@@ -1,0 +1,73 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel='stylesheet' href='https://bgrins.github.io/spectrum/spectrum.css' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src='https://bgrins.github.io/spectrum/spectrum.js'></script>
+
+    <!-- Load TensorFlow.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.2"></script>
+    <!-- Load BodyPix -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/body-pix@2.0"></script>
+
+    <link rel="stylesheet" href="./static/stylesheet.f9ffd9fea8dd.css">
+    <link rel="shortcut icon" type="image/png" href="./static/favicon.b4e2a4f32be6.ico" />
+</head>
+
+<body>
+    <div class="row">
+        <div class="col">
+            <video hidden id="myVid" width="640" height="350" autoplay playsinline></video>
+            <canvas id="canvas" width="640" height="350"></canvas>
+            <canvas id="canvasA" width="640" height="350"></canvas>
+        </div>
+    </div>
+
+    </div>
+    <script type="text/javascript">
+        navigator.mediaDevices.getUserMedia({ video: { width: 640, height: 350 }, audio: false }).then(handleSuccess)
+        function handleSuccess(stream) {
+            const video = document.querySelector('video');
+            console.log(`Using video device: ${stream.getVideoTracks()[0].label}`);
+            video.srcObject = stream;
+        }
+    </script>
+
+    <script>
+        setTimeout(function () {
+            const img = document.getElementById('myVid');
+            const canvas = document.getElementById('canvas');
+            
+            const canvasA = document.getElementById('canvasA');
+            var ctxA = canvasA.getContext("2d");
+            ctxA.fillStyle = "black";
+            ctxA.fillRect(0, 0, canvasA.width, canvasA.height);
+
+            async function loadAndPredict() {
+                const net = await bodyPix.load();
+                const segmentation = await net.segmentPerson(img);
+
+                // The mask image is an binary mask image with a 1 where there is a person and
+                // a 0 where there is not.
+                const coloredPartImage = bodyPix.toMask(segmentation);
+                const opacity = 1;
+                const flipHorizontal = false;
+                const maskBlurAmount = 0;
+                const ctx = canvas.getContext('2d');
+
+                ctx.globalCompositeOperation = 'xor';
+                // Draw the mask image on top of the original image onto a canvas.
+                // The colored part image will be drawn semi-transparent, with an opacity of
+                // 0.7, allowing for the original image to be visible under.
+                bodyPix.drawMask(
+                    canvas, img, coloredPartImage, opacity, maskBlurAmount,
+                    flipHorizontal);                                
+                loadAndPredict();
+            
+            }
+            loadAndPredict();
+        }, 5000);
+    </script>
+    </div>
+</body>
