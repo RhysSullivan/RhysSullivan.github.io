@@ -31,9 +31,9 @@ var outdated = false;
 refreshGrid();
 
 //assigns colours to grid
-function fastRefresh() {  
+function fastRefresh() {
   for (var index = 0; index < col_to_update.length; index++) {
-    
+
     // var randomColor = Math.floor(Math.random() * 16777215).toString(16);
     // ctx.fillStyle = "#" + randomColor;        
     i = col_to_update[index][0]
@@ -43,7 +43,7 @@ function fastRefresh() {
     b = col_to_update[index][2][2]
     ctx.fillStyle = `rgb(${r},${g},${b})`;
     ctx.fillRect(i * PIXEL_SIZE, j * PIXEL_SIZE, PIXEL_SIZE, PIXEL_SIZE);
-  }  
+  }
   outdated = false;
 }
 
@@ -89,13 +89,86 @@ function rgb2List(rgb) {
   rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
   return [parseInt(rgb[1]), parseInt(rgb[2]), parseInt(rgb[3])];
 }
-
+var oldX = -1000;
+var oldY = -1000;
+var brushType = 1
 c.addEventListener('mousedown', e => {
   x = e.offsetX;
   y = e.offsetY;
-  isDrawing = true;
-  getGrid();
+  switch (brushType) {
+    case 1:
+      isDrawing = true;
+      getGrid();
+      break;
+    case 2:
+      x = Math.floor(x / PIXEL_SIZE);
+      y = Math.floor(y / PIXEL_SIZE);
+      new_col = rgb2List($("#selected").css("background-color"));
+      old_col = colours[x][y];
+      ff_nr(x, y, old_col, new_col)
+      break;
+  }
 });
+function chooseBrush(type) {
+  brushType = type;
+  bb = document.getElementById('brush')
+  bub = document.getElementById('bucket')
+  switch (brushType) {
+    case 1:
+      bb.className = "selected"
+      bub.className = "notselected"
+      break;
+    case 2:
+      bb.className = "notselected"
+      bub.className = "selected"
+      break;
+  }
+}
+function colMatch(colA, colB) {
+  return colA[0] == colB[0] && colA[1] == colB[1] && colA[2] == colB[2]
+}
+
+function flood_fill_nr(pos_x, pos_y, target_color, color, depth) {
+
+  if (pos_y < 0 || pos_x < 0 || pos_x >= X_DIMENSION || pos_y >= Y_DIMENSION || depth > 10000) // if there is no wall or if i haven't been there
+  {
+    return false;                                              // already go back
+  }
+
+  oldCol = colours[pos_x][pos_y]
+  if (!colMatch(oldCol, target_color)) // if it's not color go back  
+  {
+    return false;
+  }
+  if (colMatch(oldCol, color)) {
+    return false;
+  }
+  colours[pos_x][pos_y] = color;
+  var temp = [pos_x, pos_y, color];
+  col_to_update.push(temp);
+  return true;
+}
+
+function ff_nr(pos_x, pos_y, target_color, color) {
+  q = []
+  q.push([pos_x, pos_y])
+  while (q.length > 0) {
+    coords = q.pop()
+    x = coords[0]
+    y = coords[1]
+
+    if (flood_fill_nr(x + 1, y, target_color, color))
+      q.push([x + 1, y])
+    if (flood_fill_nr(x, y + 1, target_color, color))
+      q.push([x, y + 1])
+    if (flood_fill_nr(x - 1, y, target_color, color))
+      q.push([x - 1, y])
+    if (flood_fill_nr(x, y - 1, target_color, color))
+      q.push([x, y - 1])
+  }
+  sendData();
+}
+
 
 c.addEventListener('mousemove', e => {
   if (isDrawing === true) {
@@ -111,6 +184,8 @@ c.addEventListener('mouseup', e => {
     draw(x, y);
     x = 0;
     y = 0;
+    oldX = -1000;
+    oldY = -1000;
     isDrawing = false;
     refreshGrid();
     sendData();
@@ -123,10 +198,56 @@ function draw(x, y) {
   let row = Math.floor(x / PIXEL_SIZE);
   let col = Math.floor(y / PIXEL_SIZE);
   let new_col = rgb2List($("#selected").css("background-color"));
-  if (row < X_DIMENSION && col < Y_DIMENSION) {
-    colours[row][col] = new_col;
-    var temp = [row, col, new_col];
-    col_to_update.push(temp);
+  x = row
+  y = col
+  atPos = false
+  while (!atPos) {
+    atPos = true
+    if (oldX == -1000 || oldY == -1000) {
+      oldY = y;
+      oldX = x
+    }
+    else {
+      switch (1) {
+        case 1:
+          if (oldX != x) {
+            atPos = false
+            oldX += -Math.sign(oldX - x)
+          }
+
+          if (oldY != y) {
+            atPos = false
+            oldY += -Math.sign(oldY - y)
+          }
+          break;
+        case 2:
+          xDelta = Math.abs(oldX - x)
+          yDelta = Math.abs(oldY - y)
+          console.log(xDelta)
+          console.log(yDelta)
+          if (oldX != x) {
+            if (xDelta < yDelta || xDelta == yDelta) {
+              atPos = false
+              oldY += -Math.sign(oldY - y)
+            }
+          }
+          if (oldY != y) {
+            if (yDelta < xDelta || xDelta == yDelta) {
+              atPos = false
+              oldX += -Math.sign(oldX - x)
+            }
+          }
+          break;
+      }
+    }
+    if (oldX < X_DIMENSION && oldY < Y_DIMENSION) {
+      colours[oldX][oldY] = new_col;
+      var temp = [oldX, oldY, new_col];
+      col_to_update.push(temp);
+    }
+    else {
+      break;
+    }
   }
   fastRefresh();
 }

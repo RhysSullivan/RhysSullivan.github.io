@@ -27,6 +27,10 @@ body {
   cursor: pointer;
 }
 
+.selected {
+  background-color: rgb(116, 116, 112);
+}
+
 .old_matrices{
   margin-top: 5%;
 }
