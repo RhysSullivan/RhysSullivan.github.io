@@ -18,15 +18,15 @@
 <body>
     <div class="row">
         <div class="col">
-            <video hidden id="myVid" width="640" height="350" autoplay playsinline></video>
-            <canvas id="canvas" width="640" height="350"></canvas>
-            <canvas id="canvasA" width="640" height="350"></canvas>
+            <video hidden id="myVid" width="622" height="350" autoplay playsinline></video>            
+            <canvas id="drawing" width="622" height="350" style="position:absolute;top:10;left:100;"></canvas>
+            <canvas id="canvas" width="622" height="350" style="position:absolute;top:10;left:100;"></canvas>
         </div>
     </div>
 
     </div>
     <script type="text/javascript">
-        navigator.mediaDevices.getUserMedia({ video: { width: 640, height: 350 }, audio: false }).then(handleSuccess)
+        navigator.mediaDevices.getUserMedia({ video: { width: 622, height: 350 }, audio: false }).then(handleSuccess)
         function handleSuccess(stream) {
             const video = document.querySelector('video');
             console.log(`Using video device: ${stream.getVideoTracks()[0].label}`);
@@ -35,14 +35,85 @@
     </script>
 
     <script>
+        var gridData = []
+        var col_to_update = [];
+        X_DIMENSION = 1280 / 8;
+        Y_DIMENSION = 720 / 8;
+        PIXEL_SIZE = 3.8875;
+        var a = []
+        for (var i = 0; i < X_DIMENSION; i++) {
+            row = []
+            for (var j = 0; j < Y_DIMENSION; j++) {
+                row.push([0, 0, 0])
+            }
+            a.push(row)
+            row = []
+        }
+
+        function setupColours() {
+            var colours = [];
+            for (var i = 0; i < X_DIMENSION; i++) {
+                var row = [];
+                for (var j = 0; j < Y_DIMENSION; j++) {
+                    row[j] = a[i][j];
+                }
+                colours.push(row);
+            }
+            return colours;
+        }
+
+        var colours = setupColours();
+
+
+        function getGrid() {
+            $.ajax({
+                url: "https://www.rhyssullivan.dev/refresh/",
+                type: 'GET',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                success: function (result) {
+                    colours = result.leds;
+
+                    col_to_update = col_to_update.filter((ww = {}, a => !(ww[a] = a in ww)));
+                    for (let x = 0; x < col_to_update.length; x++) {
+                        let row = col_to_update[x][0];
+                        let col = col_to_update[x][1];
+                        let colour = col_to_update[x][2];
+                        colours[row][col] = colour;
+                    }
+                    const canvas = document.getElementById('drawing');
+                    const ctx = canvas.getContext('2d');
+                    for (var i = 0; i < X_DIMENSION; i++) {
+                        for (var j = 0; j < Y_DIMENSION; j++) {
+                            // var randomColor = Math.floor(Math.random() * 16777215).toString(16);
+                            // ctx.fillStyle = "#" + randomColor;        
+                            let r = colours[i][j][0];
+                            let g = colours[i][j][1];
+                            let b = colours[i][j][2];
+                            r = Math.floor(r / 128);
+                            g = Math.floor(g / 128);
+                            b = Math.floor(b / 128);
+                            r *= 256;
+                            g *= 256;
+                            b *= 256;
+                            ctx.fillStyle = `rgb(${colours[i][j][0]},${colours[i][j][1]},${colours[i][j][2]})`;
+                            ctx.fillRect(i * PIXEL_SIZE, j * PIXEL_SIZE, PIXEL_SIZE, PIXEL_SIZE);
+                        }
+                    }
+                    ctx.fillRect(i * PIXEL_SIZE, j * PIXEL_SIZE, PIXEL_SIZE, PIXEL_SIZE);
+                    console.log('hi')
+                }
+            });
+            setTimeout(function () {
+                getGrid();
+            }, 500);
+        }
+        getGrid();
+
         setTimeout(function () {
             const img = document.getElementById('myVid');
             const canvas = document.getElementById('canvas');
-            
-            const canvasA = document.getElementById('canvasA');
-            var ctxA = canvasA.getContext("2d");
-            ctxA.fillStyle = "black";
-            ctxA.fillRect(0, 0, canvasA.width, canvasA.height);
 
             async function loadAndPredict() {
                 const net = await bodyPix.load();
@@ -56,15 +127,33 @@
                 const maskBlurAmount = 0;
                 const ctx = canvas.getContext('2d');
 
-                ctx.globalCompositeOperation = 'xor';
+
                 // Draw the mask image on top of the original image onto a canvas.
                 // The colored part image will be drawn semi-transparent, with an opacity of
                 // 0.7, allowing for the original image to be visible under.
                 bodyPix.drawMask(
                     canvas, img, coloredPartImage, opacity, maskBlurAmount,
-                    flipHorizontal);                                
+                    flipHorizontal);
+
+                // get the image data object
+                var image = ctx.getImageData(0, 0, 622, 350);
+                // get the image data values 
+                var imageData = image.data
+                length = imageData.length;
+                // set every fourth value to 50
+                // convert pixel position from 622, 350 to 160, 90
+                for (var i = 0; i < length; i += 4) {
+                    color = imageData[i] + imageData[i + 1] + imageData[i + 2]
+                    if (color == 0) {                        
+                        imageData[i + 3] = 0;
+                    }
+
+                }
+                // after the manipulation, reset the data
+                image.data = imageData;
+                // and put the imagedata back to the canvas
+                ctx.putImageData(image, 0, 0);
                 loadAndPredict();
-            
             }
             loadAndPredict();
         }, 5000);
