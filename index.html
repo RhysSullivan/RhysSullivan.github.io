@@ -1,8 +1,10 @@
-﻿<!DOCTYPE html>
+﻿ <!-- I fully understand the HTML/CSS here is absolutely awful, I promise my backend work is much cleaner -->
+
+<!DOCTYPE html>
 <html>
 <head>
-<title>Rhys Sullivan - Unreal Engine 4 game developer</title>
-<meta name="description" content="Online portfolio of Rhys Sullivan, who develops games in Unreal Engine 4 and C++" />
+<title>Rhys Sullivan - Programmer</title>
+<meta name="description" content="Online portfolio of Rhys Sullivan, programmer" />
 <meta name="google-site-verification" content="hvKwhr4EytipS06Ho_EDmePlUKuVeUx1RaLNMnU491I" />
 </head>
 
@@ -43,7 +45,11 @@
 			flex-wrap: wrap;
 			justify-content: center;
 		}
-
+		.header{
+			font-size: 1.5em;
+			font-weight: bold;
+			justify-content: center;
+		}
 		.part {
 			width: 540px;
 			padding-right: 64px;
@@ -77,9 +83,105 @@
 	</style>
 	
 	<div id="content">
-
-
+		<section class="w3-container w3-center w3-content">
+			<h1 > Work Experience </h1>
+		</section>
 		<div class="parts">
+			<div class="part">
+				<span class="title">Raven Software</span><br>Warzone - Gameplay Programming Intern<br>
+				<br>				
+				<a href="https://www.ravensoftware.com/home"><img src="Home/wz_logo.jpeg" alt="Random Name" style="width:100%"></a>
+				<br>
+				Worked with the gameplay engineering team on Call Of Duty Warzone.
+				<br>
+				<br>
+				Implemented bug fixes, ascender disconenction, and the red door hallway system into the game. 
+				<br>
+				<br>
+				Got up to speed with proprietary tools and made significant contributions to the project all in a remote environment. 
+				<br>
+				<br>
+				Duration: May - August 2021
+			</div>
+			<div class="part">
+				<span class="title">Epic Games</span>
+				<br>
+				Fortnite - Gameplay Optimization Intern<br>
+				<br>
+				<br>
+				<a href="https://www.epicgames.com/fortnite/en-US/home"><img src="Home/fn_logo2.jpg" alt="Random Name" style="width:79%" ></a>
+				<br>
+				Worked with the gameplay optimization team on Fortnite.
+				<br>
+				<br>
+				Read performance reports, found slow functions, implemented bug fixes & features
+				<br>
+				<br>
+				Learned how to read performance graphs and work in a remote environment
+				<br>
+				<br>
+				Duration: May - August 2020
+			</div>
+			<div class="part">
+				<span class="title">White Snake Projects</span>
+				<br>
+				Unreal Programmer
+				<br>
+				<br>
+				<div class="iframe-container">
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/AJY8eD5Oy1Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+				<br>
+				Joined the project as after the lead of the project was unable continue full time work on it. Project had significant programming work to be done within a month for a virtual opera performance.
+				<br>
+				<br>
+				Quickly got up to speed on the project files, put the project on source control to support multiple people working at the same time, created an editor utility widget for sequence playback, handled all of the programming requests from the production
+				<br>
+				<br>
+				Duration: April - May 2021
+			</div>
+		</div>
+		<section class="w3-container w3-center w3-content">
+			<h1>Personal Projects</h1>
+		</section>
+		<div class="parts">
+			<div class="part">
+				<span class="title">Shelf Life</span>Class Project Feb - April 2021<br>
+				<br>
+				<div class="iframe-container">
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/kMtXJYT95oc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+				<br>
+				What is it: iOS / Android app built with React Native to digitize a pantry. Used Python, Flask, and SQL for the backend. App tracks nutritional information, expiration dates, budget, and suggests recipes
+				<br>
+				<br>
+				Team Size: 4
+				<br>
+				<br>
+				Duration: 2 months
+				<br>
+				<br>
+				What I did: All of the backend code with Flask, Python, SQL. Misc front end work also including the barcode scanning & item entry screen. Utility Python scripts to scrape recipes off of websites and put them in our database. Project management with 2 week sprints, assigned tasks to team members, and handled any Git errors along with reviewing and merging pull requests.
+			</div>
+
+			<div class="part">
+				<span class="title">Into the Depths</span>UE4 Mega Jam 2020<br>
+				<br>
+				<div class="iframe-container">
+				<iframe width="450" height="212" src="https://www.youtube.com/embed/UQY_y9FIhzM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+				<br>
+				What is it: Singleplayer VR game where you pilot a submarine and fight a flying water dragon. Submarine had missiles and sonar for detecting floating mines.
+				<br>
+				<br>
+				Team Size: 5
+				<br>
+				<br>
+				Duration: 7 days
+				<br>
+				<br>
+				What I did: All of the programming, flying boss AI, pilotable submarine along with pilot assist, motion sickness helpers with blinkers for the player vision and for the pod.
+			</div>
 
 			<div class="part">
 				<span class="title">Ground Control</span>UE4 Mega Jam 2019<br>
@@ -101,7 +203,27 @@
 			</div>
 
 			<div class="part">
+				<span class="title">Busy Bee Movers</span>ArtCenter GameJam 2021<br>
+				<br>
+				<div class="iframe-container">
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/du1VECmZ8L8?start=14" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+				<br>
+				What is it: 2 Player LAN / Online Co-Op game. Both players control one character, if they move together they go full speed, if one person is only moving they go half speed, and if they do opposite inputs they don't move at all.
+				<br>
+				<br>
+				Team Size: 4
+				<br>
+				<br>
+				Duration: 48 hours
+				<br>
+				<br>
+				What I did: Fog of war, character movement, obstacles, gameplay loop, steam integration, game concept. 
+			</div>
+
+			<div class="part">
 				<span class="title">Untitled VR Kart Racer</span>Jan 2019-June 2019<br>
+				<br>
 				<br>
 				<div class="iframe-container">
 				<iframe width="450" height="212" src="https://www.youtube.com/embed/LZSft4THWVQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -117,44 +239,6 @@
 				<br>
 				<br>
 				What I did: Network replicated kart movement system, pooled item spawning system, and grabbable items all implemented in C++ - some Blueprints were used to extend the C++ base classes.
-			</div>
-
-			<div class="part">
-				<span class="title">Last Day In The Park</span> UE4 Summer Jam 2019<br>
-				<br>
-				<div class="iframe-container">
-				<iframe width="450" height="212" src="https://www.youtube.com/embed/1xgsrFzFU5k?start=15" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-				</div>
-				<br>
-				What is it: Virtual Reality game where you play with your dog in the park.
-				<br>
-				<br>
-				Team Size: 1
-				<br>
-				<br>
-				Duration: 5 Days
-				<br>
-				<br>
-				What I did: Programmed AI for playing frisbee and fetch. Made a bike racing mini game and treat giving mini game. Project was done using pure blueprints. All modeling was done by me.
-			</div>
-
-			<div class="part">
-				<span class="title">Stranded On Mars</span> UE4 Summer Jam 2018<br>
-				<br>
-				<div class="iframe-container">
-				<iframe width="450" height="212" src="https://www.youtube.com/embed/K6QMpFei6T8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-				</div>
-				<br>
-				What is it: Wave style 3D tower defense game made for the game jam theme "Well that escalated quickly". Player has a budget of buildings that can be placed down and has to place different turrets to defend their base.
-				<br>
-				<br>
-				Team Size: 5
-				<br>
-				<br>
-				Duration: 5 Days
-				<br>
-				<br>
-				What I did: Programmed taser turret that can jump from enemy to enemy, emote wheel widget and implementation, wave AI that would attack the closet turret or the base. Project was done using Blueprints.
 			</div>
 
 			<div class="part">
@@ -175,46 +259,6 @@
 				<br>
 				What I did: Programmed basic vehicle path finding code that would allow AI to stay on the course and react to other bikes coming near them. I also figured out how to convert input from an aux cord on the spin bike into in game movement through taking the average over a time of the intensity of the mic value. Project used a mix of C++ and blueprints. 
 			</div>
-
-
-			<div class="part">
-				<span class="title">Recalled</span> UE4 Spring Jam 2018<br>
-				<br>
-				<div class="iframe-container">
-				<iframe width="450" height="212" src="https://www.youtube.com/embed/hg0zWPjyGgM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-				</div>
-				<br>
-				What is it: Single player platformer made for the theme of "Transformation". The game is set inside of a factory that is trying to destroy the player and the player has to gain upgrades to escape.
-				<br>
-				<br>
-				Team Size: 5
-				<br>
-				<br>
-				Duration: 5 Days
-				<br>
-				<br>
-				What I did: Programmed the final boss AI, moving platforms, and player death. Project used blueprints.
-			</div>
-
-			<div class="part">
-				<span class="title">Cobble</span> Global Game Jam 2020<br>
-				<br>
-				<div class="iframe-container">
-				<iframe width="450" height="212" src="https://www.youtube.com/embed/vusB_9LhE_Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-				</div>
-				<br>
-				What is it: Single player platformer made for the theme of "Repair". The game is set inside of a clocktower and you have to use gears to power different contraptions to escape the tower.
-				<br>
-				<br>
-				Team Size: 8
-				<br>
-				<br>
-				Duration: 48 Hours
-				<br>
-				<br>
-				What I did: Programmed spline based moving platforms, tileset generator for the 2.5D style, gear mechanics to allow contraptions to be powered and unpowered. Project was a mix of C++ and Blueprints.
-			</div>
-		</div>
 	</div>
 
 	<!-- Footer -->
